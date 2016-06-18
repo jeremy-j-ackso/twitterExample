@@ -1,0 +1,6 @@
+.httr-oauth
+*.swp
+.vagrant
+*~
+*.html
+twitterCreds.*

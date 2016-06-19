@@ -15,7 +15,7 @@ library(sna)
 library(qdap)
 library(tm)
 
-source('twitterCreds.R')
+source('/var/twitterCreds.R')
 
 setup_twitter_oauth(api_key, api_secret, access_token, token_secret)
 tw <- searchTwitter('#HarryPotterJobs', n=1000, since='2016-05-01')

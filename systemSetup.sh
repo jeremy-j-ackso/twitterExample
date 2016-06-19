@@ -15,4 +15,4 @@ wget https://raw.githubusercontent.com/jeremy-j-ackso/twitterExample/master/dash
 dpkg -i pandoc-1.17.1-2-amd64.deb
 Rscript rPackageInstall.R
 
-(crontab -l; echo "*/5 * * * * /usr/bin/Rscript /var/makeDashboard.R";) | crontab -
+echo "*/5 * * * * /usr/bin/Rscript /var/makeDashboard.R" | crontab -

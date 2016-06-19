@@ -7,10 +7,11 @@ sudo apt-get install -y apache2 r-base r-base-dev build-essential libcurl4-opens
     
 wget https://github.com/jgm/pandoc/releases/download/1.17.1/pandoc-1.17.1-2-amd64.deb
 wget https://raw.githubusercontent.com/jeremy-j-ackso/twitterExample/master/rPackageInstall.R
-wget https://raw.githubusercontent.com/jeremy-j-ackso/twitterExample/master/makeDashboard.R \
-    /var/makeDashboardR
-wget https://raw.githubusercontent.com/jeremy-j-ackso/twitterExample/master/dashboard.Rmd \
-    /var/dashboard.Rmd
+wget -O /var/makeDashboard.R \
+    https://raw.githubusercontent.com/jeremy-j-ackso/twitterExample/master/makeDashboard.R
+wget -O /var/dashboard.Rmd \
+    https://raw.githubusercontent.com/jeremy-j-ackso/twitterExample/master/dashboard.Rmd
+    
 
 dpkg -i pandoc-1.17.1-2-amd64.deb
 Rscript rPackageInstall.R

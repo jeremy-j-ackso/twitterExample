@@ -1,5 +1,5 @@
 ---
-title: "\\#Solar"
+title: "\\#HarryPotterJobs"
 output: 
   flexdashboard::flex_dashboard
 ---
@@ -15,10 +15,10 @@ library(sna)
 library(qdap)
 library(tm)
 
-source('twitterCreds.R')
+source('/var/twitterCreds.R')
 
 setup_twitter_oauth(api_key, api_secret, access_token, token_secret)
-tw <- searchTwitter('#Solar', n=1000, since='2016-05-01')
+tw <- searchTwitter('#HarryPotterJobs', n=1000, since='2016-05-01')
 d <- twListToDF(tw)
 ```
 
@@ -98,8 +98,7 @@ polWord[[1]] <- gsub('c\\(\\"|\\"|\\)|,', '', polWord[[1]])
 polWord[[2]] <- gsub('c\\(\\"|\\"|\\)|,', '', polWord[[2]])
 polWordTables <- sapply(polWord, table)
 for(i in 1:length(polWordTables)) {
-	polWordTables[[i]] <- 
-	sort(polWordTables[[i]])[(length(polWordTables[[i]])-30):(length(polWordTables[[i]]))]
+polWordTables[[i]] <- sort(polWordTables[[i]])
 }
 
 par(mfrow = c(1, 2))
@@ -152,5 +151,5 @@ vlabs[degree(rtnet, cmode = 'outdegree') == 0] = NA
 par(mar = c(0, 0, 3, 0))
 plot(rtnet, label = vlabs, label.pos = 5, label.cex = .8, 
      vertex.cex = log(degree(rtnet)) + .5, vertex.col = col3[1],
-     edge.lwd = 'num', edge.col = 'gray70', main = '\\#Solar Retweet Network')
+     edge.lwd = 'num', edge.col = 'gray70', main = '#HarryPotterJobs Retweet Network')
 ```

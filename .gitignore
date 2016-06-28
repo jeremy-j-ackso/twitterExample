@@ -3,7 +3,7 @@
 .vagrant
 *~
 *.html
-twitterCreds.*
+twitterCreds*.*
 removed.*
 *.log
 alt.R
